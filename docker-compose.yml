@@ -1,0 +1,22 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./backend/db:/app/db
+    networks:
+      - lognet
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:80"         # Vite dev port exposed as HTTP via NGINX
+    depends_on:
+      - backend
+    networks:
+      - lognet
+
+networks:
+  lognet:
+    driver: bridge
