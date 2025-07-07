@@ -138,14 +138,25 @@ docker-compose build backend
 
 ---
 
+### ✅ Unit Tests
+
+- Jest tests added for backend log filtering logic.
+- Run tests with:
+
+```bash
+cd server
+npm test
+
 ## ✅ Bonus Features Implemented
 
 - [x] Real-time WebSocket log updates
 - [x] Log analytics chart
 - [x] Full Docker + Compose setup
+- [x] Unit Test Cases
 
 ---
 
 ## 📃 License
 
 ISC License
+```

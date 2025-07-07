@@ -21,11 +21,17 @@ const App = () => {
         fetchLogs(filters);
     }, [filters]);
 
+    // ✅ Connect to socket once and refresh logs on new_log event
     useEffect(() => {
-        socket.on("new-log", () => {
-            fetchLogs(filters);
-        });
-        return () => socket.disconnect();
+        const handleNewLog = () => {
+            fetchLogs(filters); // fetch latest logs based on current filters
+        };
+
+        socket.on("new_log", handleNewLog);
+
+        return () => {
+            socket.off("new_log", handleNewLog); // clean up listener
+        };
     }, [filters]);
 
     return (
