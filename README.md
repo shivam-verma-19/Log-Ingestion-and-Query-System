@@ -32,7 +32,12 @@ A full-stack developer assignment built with **Node.js + Express** (backend) and
 project-root/
 ├── backend/
 │   ├── routes/
+|   |──── logs.js
 │   ├── db/logs.json
+│   ├── server/utils
+│   ├────── filterLogs.js
+│   ├────── filterLogs.test.js
+|   |──── jest.config.js
 │   ├── server.js
 │   ├── Dockerfile
 ├── frontend/
@@ -146,6 +151,7 @@ docker-compose build backend
 ```bash
 cd server
 npm test
+```
 
 ## ✅ Bonus Features Implemented
 
@@ -159,4 +165,7 @@ npm test
 ## 📃 License
 
 ISC License
+
+```
+
 ```
