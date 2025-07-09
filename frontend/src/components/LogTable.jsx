@@ -7,17 +7,24 @@ const levelColor = {
 
 const LogTable = ({ logs }) => {
     return (
-        <div className="space-y-2">
+        <div className="space-y-4">
             {logs.map((log, idx) => (
-                <div key={idx} className={`p-4 rounded ${levelColor[log.level] || ""}`}>
-                    <div className="font-bold">[{log.level.toUpperCase()}] {log.timestamp}</div>
-                    <div className="text-sm">{log.message}</div>
-                    <div className="text-xs text-gray-600 mt-1">
+                <div
+                    key={idx}
+                    className={`p-4 rounded-md border-l-4 shadow-sm ${levelColor[log.level]} transition duration-300`}
+                >
+                    <div className="font-semibold text-gray-800 mb-1">
+                        <span className="uppercase">[{log.level}]</span>{" "}
+                        {new Date(log.timestamp).toLocaleString()}
+                    </div>
+                    <p className="text-gray-700">{log.message}</p>
+                    <div className="text-xs text-gray-500 mt-2">
                         Resource: {log.resourceId} | Trace: {log.traceId} | Commit: {log.commit}
                     </div>
                 </div>
             ))}
         </div>
+
     );
 };
 
