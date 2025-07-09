@@ -1,4 +1,3 @@
-import React from "react";
 import { BarChart, XAxis, YAxis, Tooltip, Legend, Bar, ResponsiveContainer } from "recharts";
 
 const LogChart = ({ logs }) => {
@@ -13,7 +12,7 @@ const LogChart = ({ logs }) => {
     }));
 
     return (
-        <div className="my-6 h-64">
+        <div className="my-6" style={{ height: "300px" }}>
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={data}>
                     <XAxis dataKey="level" />

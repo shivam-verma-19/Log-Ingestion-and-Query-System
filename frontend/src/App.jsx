@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import LogFilters from "./components/LogFilters.jsx";
-import LogTable from "./components/Logtable.jsx";
+import LogTable from "./components/LogTable.jsx";
 import LogChart from "./components/LogChart";
 import { io } from "socket.io-client";
 

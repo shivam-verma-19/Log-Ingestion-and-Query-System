@@ -1,5 +1,3 @@
-import React from "react";
-
 const levelColor = {
     error: "border-l-4 border-red-500 bg-red-50",
     warn: "border-l-4 border-yellow-400 bg-yellow-50",
