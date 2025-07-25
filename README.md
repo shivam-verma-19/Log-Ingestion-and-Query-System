@@ -165,7 +165,3 @@ npm test
 ## 📃 License
 
 ISC License
-
-```
-
-```
