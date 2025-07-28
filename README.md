@@ -57,7 +57,7 @@ project-root/
 ### 1. Clone the Repo
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/shivam-verma-19/Log-Ingestion-and-Query-System.git
 cd project-root
 ```
 

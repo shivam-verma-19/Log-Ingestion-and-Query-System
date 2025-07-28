@@ -10,3 +10,19 @@ body {
 h1 {
   color: #111827;
 }
+
+/* ✅ New: Add spacing between label and input */
+label {
+  display: block;
+  margin-bottom: 6px; /* space between label and input */
+  font-weight: 500;
+}
+
+input,
+select {
+  margin-bottom: 16px; /* space below each field */
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
