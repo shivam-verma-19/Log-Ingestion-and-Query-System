@@ -14,7 +14,7 @@ const logSchema = z.object({
     traceId: z.string(),
     spanId: z.string(),
     commit: z.string(),
-    metadata: z.record(z.any())
+    metadata: z.record(z.string(), z.any())
 });
 
 async function readLogs() {
@@ -33,7 +33,7 @@ async function writeLogs(logs) {
 router.post("/logs", async (req, res) => {
     const parsed = logSchema.safeParse(req.body);
     if (!parsed.success) {
-        return res.status(400).json({ error: "Invalid log format", details: parsed.error.errors });
+        return res.status(400).json({ error: "Invalid log format", details: parsed.error.issues });
     }
 
     const logs = await readLogs();
